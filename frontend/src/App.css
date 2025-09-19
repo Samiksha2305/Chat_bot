@@ -1,0 +1,114 @@
+/* === Base & Layout === */
+html, body, #root { height: 100%; }
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #111;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  direction: ltr; /* ensure LTR globally */
+}
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+.container { width: 100%; padding: 24px; display: grid; gap: 16px; }
+.header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+
+/* === Cards === */
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 1px 0 rgba(16,24,40,.02);
+}
+
+/* === Typography === */
+.title { margin: 0; font-size: 32px; font-weight: 700; }
+.subtitle { margin: 0 0 8px; font-size: 14px; font-weight: 600; }
+.label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #222; }
+
+/* === Tabs === */
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.tab { padding: 10px 14px; border-radius: 999px; border: 1px solid #ddd; background: #fff; cursor: pointer; }
+.tab--active { background: #111; color: #fff; border-color: #111; }
+
+/* === Inputs & Buttons === */
+.input, textarea, input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font: inherit;
+  direction: ltr;            /* force LTR typing */
+  unicode-bidi: isolate;     /* isolate from surrounding bidi context */
+  text-align: left;
+  background: #fff;
+  color: #111;
+}
+.input:focus, textarea:focus, input:focus {
+  outline: 2px solid #4c8bf5;
+  outline-offset: 0;
+}
+.tall { min-height: 140px; }
+
+.btn, .button {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+.button.secondary { background: #fff; color: #111; }
+
+/* Simple vertical spacing utility */
+.space-y > * + * { margin-top: 12px; }
+
+/* === Result block & Images === */
+.result { white-space: pre-wrap; word-break: break-word; font-size: 13px; margin: 0; }
+.imgWrap { margin-top: 12px; }
+.imgCap { font-size: 12px; color: #666; margin-bottom: 4px; }
+.img { border: 1px solid #eee; border-radius: 8px; max-height: 70vh; max-width: 100%; }
+
+/* === Chat UI === */
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 55vh;
+  overflow: auto;
+  padding: 4px;
+  border: 1px dashed #eee;
+  border-radius: 12px;
+}
+.chat-input {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: end;
+}
+.bubble {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 14px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.bubble-role { font-size: 11px; color: #666; text-transform: lowercase; }
+.bubble-text { font-size: 14px; line-height: 1.35; }
+.bubble.me { align-self: flex-end; background: #111; color: #fff; border-top-right-radius: 4px; }
+.bubble.bot { align-self: flex-start; background: #f6f6f6; border: 1px solid #eee; border-top-left-radius: 4px; }
+
+/* Remove Vite starter bits if they exist */
+.logo, .read-the-docs { display: none !important; }
+
+/* Hard overrides in case browser/OS tries RTL */
+html { direction: ltr !important; }
+.input, textarea, input {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left !important;
+}
