@@ -2,6 +2,9 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import "./App.css";
 //import { API_URL } from "./config/api";
+import { API_URL } from "./config/api.js";
+
+
 
 
 const tabs = [
