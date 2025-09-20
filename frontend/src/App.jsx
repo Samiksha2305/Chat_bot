@@ -1,6 +1,7 @@
 // frontend/src/App.jsx
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import "./App.css";
+import { API_URL } from "./config/api";
 
 const tabs = [
   { id: "unified", label: "Chat with me" },
@@ -62,7 +63,7 @@ export default function App() {
     setChatInput("");
     setLoading(true);
     try {
-      const res = await fetch(`/api/chatbot`, {
+      const res = await fetch(`${API_URL}/api/chatbot`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg }),
@@ -114,7 +115,7 @@ export default function App() {
     setNewsInput("");
     setLoading(true);
     try {
-      const res = await fetch(`/api/webnews`, {
+      const res = await fetch(`${API_URL}/api/webnews`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: q }),
@@ -153,7 +154,7 @@ export default function App() {
     setResult("");
     setImagePath("");
     try {
-      const res = await fetch(endpoint, {
+      const res = await fetch(`${API_URL}${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -177,7 +178,7 @@ export default function App() {
       const fd = new FormData();
       fd.append("file", csvFile);
       if (analystAsk.trim()) fd.append("ask", analystAsk.trim());
-      const res = await fetch(`/api/analyst_file`, { method: "POST", body: fd });
+      const res = await fetch(`${API_URL}/api/analyst_file`, { method: "POST", body: fd });
       const data = await res.json();
       setResult(data.output || "(no reply)");
       if (data.image_path) setImagePath(data.image_path);
@@ -207,7 +208,7 @@ export default function App() {
     setUnifiedInput("");
     setLoading(true);
     try {
-      const res = await fetch(`/api/router`, {
+      const res = await fetch(`${API_URL}/api/router`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg }),
