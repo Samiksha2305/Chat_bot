@@ -1,7 +1,8 @@
 // frontend/src/App.jsx
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import "./App.css";
-import { API_URL } from "/src/config/api.js";
+import { API_URL } from "./config/api";
+
 
 const tabs = [
   { id: "unified", label: "Chat with me" },
