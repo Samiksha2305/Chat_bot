@@ -4,6 +4,7 @@ import "./App.css";
 //import { API_URL } from "./config/api";
 import { API_URL } from "./config/api.js";
 
+const BASE_URL = "https://chat-bot-backend-q10b.onrender.com";
 
 
 
