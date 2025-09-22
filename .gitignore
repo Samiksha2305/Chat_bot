@@ -4,8 +4,6 @@
 .vscode/
 __pycache__/
 
-.env
-.env.*  
 *.log
 
 .DS_Store
