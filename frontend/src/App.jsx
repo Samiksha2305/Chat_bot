@@ -2,9 +2,9 @@
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import "./App.css";
 //import { API_URL } from "./config/api";
-import { API_URL } from "./config/api.js";
+//import { API_URL } from "./config/api.js";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 
 
