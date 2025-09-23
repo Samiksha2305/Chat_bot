@@ -1,7 +1,11 @@
 // API Configuration for Vite React App
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+//const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+//export { API_URL };
 
-export { API_URL };
+// frontend/src/config/api.js
+const base = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/+$/,'');
+export const API_URL = base;
+
 
 // Example API call function
 export const apiCall = async (endpoint, options = {}) => {

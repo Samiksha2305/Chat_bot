@@ -3,7 +3,8 @@ import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import "./App.css";
 import { API_URL } from "./config/api";
 //const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-
+// frontend/src/config/api.js  (TEMP for debugging)
+export const API_URL = "https://chat-bot-backend-q10b.onrender.com"; // <— hardcoded
 console.log("API_URL at runtime =", API_URL);
 
 
@@ -300,6 +301,7 @@ export default function App() {
               </button>
             </div>
           </section>
+
         );
       case "sql":
         return (
