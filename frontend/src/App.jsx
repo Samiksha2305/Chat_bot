@@ -66,6 +66,7 @@ export default function App() {
     setChatInput("");
     setLoading(true);
     try {
+      //const res = await (await fetch(`${API_URL}/api/chatbot`, {
       const res = await fetch(`${API_URL}/api/chatbot`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
